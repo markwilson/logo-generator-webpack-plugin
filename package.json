@@ -1,15 +1,24 @@
 {
   "name": "logo-generator-webpack-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simple logo generator for Webpack - puts an SVG on top of a rounded rectangle.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Mark Wilson",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.2.4"
+    "@types/webpack": "4",
+    "typescript": "^4.2.4",
+    "webpack": "4"
   },
   "scripts": {
     "build": "tsc"
+  },
+  "dependencies": {
+    "canvas": "^2.7.0",
+    "canvas-5-polyfill": "^0.1.5",
+    "deepmerge": "^4.2.2",
+    "svgpath": "^2.3.1",
+    "yup": "^0.32.9"
   }
 }
