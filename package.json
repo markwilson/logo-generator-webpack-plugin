@@ -3,6 +3,13 @@
   "version": "0.0.0",
   "description": "Simple logo generator for Webpack - puts an SVG on top of a rounded rectangle.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Mark Wilson",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
 }
