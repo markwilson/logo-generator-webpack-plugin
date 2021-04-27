@@ -12,7 +12,7 @@ import roundedRectangle from "./roundedRectangle";
 
 export class LogoGeneratorPluginOptionsSchemaError extends Error {}
 
-export class LogoGeneratorPlugin {
+export default class LogoGeneratorPlugin {
   static defaultOptions: DeepPartial<OptionsSchema> = {
     assetName: "logo.png",
 
