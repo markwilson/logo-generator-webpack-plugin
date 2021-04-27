@@ -12,7 +12,7 @@ import roundedRectangle from "./roundedRectangle";
 
 export class LogoGeneratorPluginOptionsSchemaError extends Error {}
 
-export default class LogoGeneratorPlugin {
+export default class LogoGeneratorWebpackPlugin {
   static defaultOptions: DeepPartial<OptionsSchema> = {
     assetName: "logo.png",
 
@@ -43,7 +43,7 @@ export default class LogoGeneratorPlugin {
   options: OptionsSchema;
 
   constructor(options: DeepPartial<OptionsSchema> = {}) {
-    options = merge(LogoGeneratorPlugin.defaultOptions, options);
+    options = merge(LogoGeneratorWebpackPlugin.defaultOptions, options);
 
     schema.validate(options).catch(({ errors }) => {
       throw new LogoGeneratorPluginOptionsSchemaError(errors.join(", "));
@@ -66,7 +66,7 @@ export default class LogoGeneratorPlugin {
   }
 
   apply(compiler: Compiler) {
-    const pluginName = LogoGeneratorPlugin.name;
+    const pluginName = LogoGeneratorWebpackPlugin.name;
 
     compiler.hooks.thisCompilation.tap(pluginName, (compilation) => {
       compilation.hooks.additionalAssets.tap(pluginName, () => {
