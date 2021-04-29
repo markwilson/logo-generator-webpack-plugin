@@ -1,6 +1,6 @@
 {
   "name": "logo-generator-webpack-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple logo generator for Webpack - puts an SVG on top of a rounded rectangle.",
   "repository": {
     "type": "git",
