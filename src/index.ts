@@ -92,14 +92,10 @@ export default class LogoGeneratorWebpackPlugin {
 
         // draw the icon
         ctx.fillStyle = this.options.icon.fillStyle;
-        ctx.fill(
-          new Path2D(
-            svgpath(this.options.icon.svgPath)
-              .scale(this.options.icon.scale)
-              .translate(this.options.icon.x, this.options.icon.y)
-              .toString()
-          )
-        );
+        const path = svgpath(this.options.icon.svgPath)
+          .scale(this.options.icon.scale)
+          .translate(this.options.icon.x, this.options.icon.y);
+        ctx.fill(new Path2D(path.toString()));
 
         const stream = canvas.createPNGStream();
         compilation.assets[this.options.assetName] = {
